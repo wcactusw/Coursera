@@ -1,0 +1,18 @@
+## programming assignment 1 ##
+## compute the product using karatsuba methods
+
+def karatsuba(x,y):
+    if len(x)==1 and len(y)==1:
+        ans=int(x)*int(y)
+    else:
+        n=len(x)
+        ac=karatsuba(x[0:int(n/2)],y[0:int(n/2)])
+        bd=karatsuba(x[int(n/2):],y[int(n/2):])
+        mid=karatsuba(str(int(x[0:int(n/2)])+int(x[int(n/2):])),str(int(y[0:int(n/2)])+int(y[int(n/2):])))-ac-bd
+        ans=10**n*ac+10**int(n/2)*mid+bd
+    return ans
+    
+    
+x='123412'
+y='543212'
+print (karatsuba(x,y))
