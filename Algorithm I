@@ -27,8 +27,11 @@ print(cwd)
 filename=cwd+'/texts'
 print(filename)
 
-with open(filename) as f: 
-  lineList = f. readlines()
+def read_integers(filename):
+    with open(filename) as f:
+        return [int(x) for x in f]
+  
+lineList=read_integers(filename)
 
 def count_split(sorted_A,sorted_B):
     if min(len(sorted_A),len(sorted_B))==0:
@@ -59,4 +62,6 @@ sorted_B=[2,4,6,7,9,11]
 print(count_split(sorted_A,sorted_B))
 
 L=[1,2,4,6,2,7,4,8,10,2,7,3,79,1,3678,3]
+print(lineList[:12])
 print(count_sort(lineList))
+#print(count_sort(L))
